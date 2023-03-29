@@ -3,6 +3,7 @@ class Team
 
   def initialize(name, city)
     @roster = []
+    #might want to add total cost array to shovel in total cost from player when pulling up the add player method
   end
 
   def player_count
@@ -11,5 +12,11 @@ class Team
   
   def add_player(player)
     roster << player
+  end
+
+  def long_term_players
+    roster.find_all do |long|
+      long.contract_length > 24
+    end
   end
 end
