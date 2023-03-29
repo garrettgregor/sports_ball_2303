@@ -5,7 +5,6 @@ class Team
   def initialize(name, city)
     @roster = []
     @total_value = 0
-    #might want to add total cost array to shovel in total cost from player when pulling up the add player method
   end
 
   def player_count
@@ -28,5 +27,12 @@ class Team
       short.contract_length <= 24
     end
     return_value.sort_by { |player| player.contract_length }
+  end
+
+  def details
+    @details = {
+      "total_value" => self.total_value,
+      "player_count" => self.player_count
+    }
   end
 end
