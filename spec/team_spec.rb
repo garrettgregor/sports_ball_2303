@@ -8,4 +8,10 @@ RSpec.describe Team do
 
     expect(team).to be_an_instance_of(Team)
   end
+  
+  it "has a roster" do
+    team = Team.new("Dodgers", "Los Angeles")
+
+    expect(team.roster).to eq([])
+  end
 end
