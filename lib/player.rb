@@ -10,4 +10,8 @@ class Player
     return_value[0]
   end
 
+  def last_name
+    return_value = name.split(" ")
+    return_value[1]
+  end
 end
