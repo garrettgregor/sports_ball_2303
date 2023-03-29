@@ -22,4 +22,8 @@ class Player
     return_value = name.split(" ")
     return_value[1]
   end
+
+  def set_nickname!(nickname)
+    @nickname = nickname
+  end
 end
