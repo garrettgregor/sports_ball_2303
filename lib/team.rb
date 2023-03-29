@@ -19,4 +19,11 @@ class Team
       long.contract_length > 24
     end
   end
+  
+  def short_term_players
+    return_value = roster.find_all do |short|
+      short.contract_length <= 24
+    end
+    return_value.sort_by { |player| player.contract_length }
+  end
 end
