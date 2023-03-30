@@ -35,4 +35,18 @@ class Team
       "player_count" => self.player_count
     }
   end
+
+  def average_cost_of_player
+    return_value = total_value / player_count
+    return_value.to_s.insert(1,",")
+    comma = return_value.to_s.insert(2,",")
+    comma.insert(6,",")
+    dollars = comma.insert(0,"$")
+  end
+
+  def players_by_last_name
+    roster.map do |player|
+      player.last_name
+    end.sort.join(", ")
+  end
 end
